@@ -53,6 +53,7 @@ spec:
 
   steps:
     - name: rego-analysis
+      image: icr.io/continuous-delivery/cra-discovery:release.1472
       env:
         - name: API_KEY
           valueFrom:
