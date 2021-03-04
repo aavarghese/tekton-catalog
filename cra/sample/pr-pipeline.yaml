@@ -34,7 +34,7 @@ spec:
       default: https://cloud.ibm.com
     - name: tf-dir
       description: the directory where the terraform main entry file is found
-      default: $(params.repository)
+      default: "/artifacts/"
     - name: policy-config-json
       description: Configure policies to control thresholds
       default: ""
@@ -329,7 +329,7 @@ spec:
 
     - name: cra-rego-analysis
       runAfter:
-        - cra-fetch-repo
+        - cra-discovery-scan
       taskRef:
         name: cra-rego-analysis
       workspaces:
