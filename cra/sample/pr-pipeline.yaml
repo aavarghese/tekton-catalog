@@ -350,10 +350,6 @@ spec:
           value: $(params.project-id)
 
     - name: cra-terraform-scan-status-pending
-      when:
-        - input: "$(params.tf-dir)"
-          operator: notin
-          values: [""]
       runAfter:
         - cra-rego-analysis
       workspaces:
