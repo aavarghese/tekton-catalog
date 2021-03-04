@@ -145,6 +145,9 @@ spec:
           result="failed"
           LOG_LEVEL="info"
 
+          ls -l /workspace
+          echo "$$$"
+          ls -l $REPO_DIR_PATH
           if [[ "$(params.policy-config-json)" == "" ]]; 
           then
             node /usr/src/index.js --git_token "NA" --repository $(params.repository) --gitClonedDir $REPO_DIR_PATH --INPUT_TF_DIR $(params.tf-dir) --revision $(params.revision) --commitid "NA" --pipelinerunid $PIPELINE_RUN_ID --prnumber "NA" --LOG_LEVEL $LOG_LEVEL --silent 1
